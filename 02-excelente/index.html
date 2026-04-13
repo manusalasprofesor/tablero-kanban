@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban JS Pro - Modular</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tablero Kanban Inteligente</h1>
+        <p>Derecho: Prioridad | Doble Click: Editar título</p>
+    </header>
+
+    <form class="task-form" id="todo-form" onsubmit="return false;">
+        <input type="text" id="task-input" placeholder="Nueva tarea..." aria-label="Nueva tarea" style="flex: 2;">
+        <select id="column-select" aria-label="Seleccionar columna">
+            <option value="todo">Pendiente</option>
+            <option value="doing">En Proceso</option>
+            <option value="done">Finalizado</option>
+        </select>
+        <button id="add-btn" type="button">Añadir</button>
+    </form>
+
+    <div class="search-container" style="max-width: 600px; margin: 0 auto 20px;">
+        <input type="text" id="search-input" placeholder="🔍 Buscar tarea..." style="width: 100%;">
+    </div>
+
+    <main class="board" id="main-board">
+        <section class="column" id="todo"> <div class="col-header" style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Pendientes</h2>
+                <button class="btn-clear" data-col="todo">Limpiar</button>
+            </div>
+            <ul class="list"></ul>
+        </section>
+
+        <section class="column" id="doing"> <div class="col-header" style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>En proceso</h2>
+                <button class="btn-clear" data-col="doing">Limpiar</button> </div>
+            <ul class="list"></ul>
+        </section>
+
+        <section class="column" id="done"> <div class="col-header" style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Finalizados</h2>
+                <button class="btn-clear" data-col="done">Limpiar</button> </div>
+            <ul class="list"></ul>
+        </section>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

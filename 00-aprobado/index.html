@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban JS - Versión Aprobado (Sin Persistencia)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tablero Kanban Inteligente</h1>
+        <p>Aprobado: Validación RegEx | Movimiento | Sin Persistencia</p>
+    </header>
+
+    <form class="task-form" onsubmit="return false;">
+        <input type="text" id="task-input" placeholder="Nueva tarea (3-30 carácteres)..." style="flex: 2;">
+        <select id="column-select">
+            <option value="todo">Pendiente</option>
+            <option value="doing">En Proceso</option>
+            <option value="done">Finalizado</option>
+        </select>
+        <button id="add-btn" type="button">Añadir</button>
+    </form>
+
+    <main class="board" id="main-board">
+        <section class="column" id="todo">
+            <h2>Pendientes</h2>
+            <ul class="list"></ul>
+        </section>
+        <section class="column" id="doing">
+            <h2>En Proceso</h2>
+            <ul class="list"></ul>
+        </section>
+        <section class="column" id="done">
+            <h2>Finalizado</h2>
+            <ul class="list"></ul>
+        </section>
+    </main>
+
+   <script src="js/scripts.js"></script>
+</body>
+</html>
